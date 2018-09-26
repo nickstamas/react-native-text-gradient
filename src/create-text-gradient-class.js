@@ -133,7 +133,7 @@ const createTextGradientClass = (
       return (
         <TextAncestor.Consumer>
           {hasTextAncestor => {
-            let comp;
+            let comp = null;
             if (hasTextAncestor) {
               comp = <RNVirtualTextGradient {...props} ref={props.forwardedRef} />;
             } else {
@@ -143,6 +143,7 @@ const createTextGradientClass = (
                 </TextAncestor.Provider>
               );
             }
+            console.log(comp);
             return comp;
           }}
         </TextAncestor.Consumer>
